@@ -1,10 +1,8 @@
 package com.picpaysimplificado.domain.user;
 
+import com.picpaysimplificado.domain.dtos.UserDTO;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 
@@ -12,6 +10,7 @@ import java.math.BigDecimal;
 @Table(name = "users")
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class User {
@@ -25,8 +24,18 @@ public class User {
     @Column(unique = true)
     private String email;
     @Column(unique = true)
-    private String senha;
+    private String password;
     private BigDecimal balance;
     @Enumerated(EnumType.STRING) //essa anotação diz que enumType vai representar um dos valores do enum
     private UserType userType;
+
+    public User(UserDTO user) {
+        this.firstName = user.firstName();
+        this.lastName = user.lastName();
+        this.document = user.document();
+        this.email = user.email();
+        this.password = user.password();
+        this.balance = user.balance();
+        this.userType = user.userType();
+    }
 }
