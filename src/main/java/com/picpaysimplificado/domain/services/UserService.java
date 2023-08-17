@@ -24,10 +24,10 @@ public class UserService {
     }
 
     public User findUserById(Long id) throws Exception {
-        return  this.repository.findUserById(id).orElseThrow(() -> new Exception("Usuário não encontrado"));
+        return this.repository.findUserById(id).orElseThrow(() -> new Exception("Usuário não encontrado"));
     }
 
-    public  void saveUser(User user){
+    public void saveUser(User user) {
         this.repository.save(user);
     }
 }

@@ -19,7 +19,7 @@ public class NotificationService {
 
         ResponseEntity<String> notificationResponse = restTemplate.postForEntity("http://o4d9z.mocklab.io/notify", notificationRequest, String.class);
 
-        if (!(notificationResponse.getStatusCode() == HttpStatus.OK)){
+        if (!(notificationResponse.getStatusCode() == HttpStatus.OK)) {
             System.out.println("Erro a enviar notificação");
             throw new Exception("Serviço de notificação indisponível");
         }
