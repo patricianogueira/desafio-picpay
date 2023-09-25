@@ -13,7 +13,7 @@ Este projeto foi desenvolvido para me preparar para os desafios do mercado de tr
    git clone https://github.com/patricianogueira/desafio-picpay
    cd nome-do-repositorio
     ```
-4. Execute o projeto com o comando `mvn spring-boot:run`
+2. Execute o projeto.
 
 
 
